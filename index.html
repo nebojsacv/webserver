@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Simple Web Page</title>
+</head>
+<body>
+  <h1>Welcome to My Website</h1>
+  <p>This is a simple HTML page hosted with no installation.</p>
+<!-- Add this to your website to track real visitors -->
+<script>
+(function() {
+    fetch('https://render-8-1ln2.onrender.com/log-visit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            referrer: document.referrer,
+            userAgent: navigator.userAgent,
+            currentUrl: window.location.href,
+            pageTitle: document.title
+        })
+    }).catch(() => {}); // Silent fail
+})();
+</script>
+
+  </body>
+</html>
